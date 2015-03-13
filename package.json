@@ -23,6 +23,6 @@
   },
   "scripts": {
     "postinstall": "./node_modules/bower/bin/bower install && set NODE_ENV=production && ./node_modules/grunt-cli/bin/grunt",
-    "start": "node./dist/app/app.js"
+    "start": "node ./dist/app/app.js"
   }
 }
