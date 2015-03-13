@@ -1,0 +1,17 @@
+!!! 5
+html(lang='en')
+  head
+    title Static Site Ready!
+    meta(charset='utf-8')
+    link(rel='shortcut icon', href=asset('images/favicon.ico'), type='image/x-icon')
+    link(rel='icon', href=asset('images/favicon.ico'), type='image/x-icon')
+    link(rel='stylesheet', type='text/css', href=asset('styles/style.min.css'))
+    link(rel='stylesheet', type='text/css', href=asset('styles/prestig-style.min.css'))
+    block stylesheets
+    // if lt IE 9
+      script(type='text/javascript', src=asset('scripts/respond.min.js'))
+  body
+    block content
+
+    block scripts
+      script(type='text/javascript', src=asset('scripts/bundle.js', '.min'))

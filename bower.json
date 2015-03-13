@@ -1,0 +1,7 @@
+{
+  "name": "prestig-site",
+  "dependencies": {
+    "jquery": "~1.9.x",
+    "components-bootstrap": "~3.3.2"
+  }
+}

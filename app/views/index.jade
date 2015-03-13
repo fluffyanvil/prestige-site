@@ -1,0 +1,22 @@
+extends _base
+
+block content
+  div.container.prestig-content
+    div.row
+      div.col-md-4
+        div
+          #sendOrderDiv.container
+            input(id='name', type='text')
+            input(id='phone', type='text')
+            input(id='email', type='text')
+            textarea(id='message')
+          div.prestig-button
+            button(onclick='sendOrder();').
+              ОТПРАВИТЬ
+      div.col-md-8.text-justify.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus feugiat, nisl vitae bibendum rhoncus,
+        leo nulla lobortis nulla, non scelerisque dolor erat ut eros. Curabitur sed dignissim urna. Vivamus quis
+        pulvinar diam, elementum facilisis mauris. Aliquam neque elit, aliquet vitae auctor vitae, lacinia sed felis.
+        Donec purus ex, bibendum vel efficitur sit amet, cursus sed nunc. Nulla facilisi. Mauris feugiat nibh in mi
+        porttitor, in fermentum orci iaculis. Nullam posuere, massa sit amet maximus varius, justo enim vehicula nunc,
+        vitae placerat ligula quam eu magna.
