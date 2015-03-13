@@ -22,7 +22,7 @@
     "serve-static": "^1.9.1"
   },
   "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install && set NODE_ENV=production && ./node_modules/grunt-cli/bin/grunt",
-    "start": "node dist/app/app.js"
+    "postinstall": "./node_modules/bower/bin/bower install && ./node_modules/grunt-cli/bin/grunt",
+    "start": "node ./dist/app/app.js"
   }
 }
