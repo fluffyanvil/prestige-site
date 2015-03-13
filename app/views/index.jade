@@ -4,15 +4,14 @@ block content
   div.container.prestig-content
     div.row
       div.col-md-4
-        div
+        div.prestig-form
           #sendOrderDiv.container
-            input(id='name', type='text')
-            input(id='phone', type='text')
-            input(id='email', type='text')
-            textarea(id='message')
-          div.prestig-button
-            button(onclick='sendOrder();').
-              ОТПРАВИТЬ
+            input(id='name', type='text', placeholder='Ваше имя')
+            input(id='phone', type='text', placeholder='Телефон')
+            input(id='email', type='text', placeholder='E-mail')
+            textarea(id='message', placeholder='Дополнительная информация')
+          button(onclick='sendOrder();').prestig-button.
+            ОТПРАВИТЬ
       div.col-md-8.text-justify.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus feugiat, nisl vitae bibendum rhoncus,
         leo nulla lobortis nulla, non scelerisque dolor erat ut eros. Curabitur sed dignissim urna. Vivamus quis

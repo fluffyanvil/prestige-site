@@ -5,6 +5,11 @@ body {
   background-color: #F0F0F0;
 }
 
+.prestig-form {
+  width: @orderFormWidth;
+  float: right;
+}
+
 #sendOrderDiv {
   width: @orderFormWidth;
   height: auto;
@@ -15,6 +20,7 @@ body {
   width: 100%;
   margin-top: 6px;
   margin-bottom: 6px;
+  padding-left: 10px;
 }
 
 #sendOrderDiv > input {
@@ -38,16 +44,10 @@ body {
 }
 
 .prestig-button {
-  padding: 0;
-  margin: 0;
-  width: @orderFormWidth;
-}
-
-.prestig-button > button {
   background-color: #6BC8CF;
   color: #262F72;
   font-weight: bold;
   border: none;
-  width: 100%;
+  width: @orderFormWidth;
   height: 40px;
 }
