@@ -12,6 +12,7 @@ var transporter = nodemailer.createTransport({
   }
 });
 
+app.set('port', (process.env.PORT || 5000));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(favicon(__dirname + '/assets/images/favicon.ico'));
@@ -39,6 +40,6 @@ app.post('/orders', function(req, res) {
   });
 });
 
-server = app.listen(3000, function() {
-  return console.log('Server listening at http://localhost:%s', server.address().port);
+app.listen(app.get('port'), function() {
+  return console.log('%s:%s', (process.env.address || 'localhost'), app.get('port'));
 });
