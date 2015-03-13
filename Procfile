@@ -1,4 +1,4 @@
-web: bower install
-web: npm i
-web: grunt default
+bower install
+ npm i
+grunt default
 web: node dist/app/app.js
