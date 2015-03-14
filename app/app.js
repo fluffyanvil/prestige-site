@@ -1,16 +1,8 @@
 var app = require('express')();
 var serveStatic = require('serve-static');
 var favicon = require('serve-favicon');
-var nodemailer = require('nodemailer');
 var bodyParser = require('body-parser');
-
-var transporter = nodemailer.createTransport({
-  service: 'Yandex',
-  auth: {
-    user: 'tofik.mamishov@prestig.pro',
-    pass: 'p4nd4r15'
-  }
-});
+var emailSender = require('./emailSender.js');
 
 app.set('port', (process.env.PORT || 5000));
 app.use(bodyParser.json());
@@ -24,20 +16,18 @@ app.post('/orders', function(req, res) {
     + '<br/>E-mail: ' + req.body.email
     + '<br/><br>' + req.body.message;
 
-  var mailOptions = {
-    from: 'tofik.mamishov@prestig.pro',
-    to: 'mamishov.tofik@gmail.com',
-    subject: 'prestig.pro - Новая заявка!',
-    html: emailBody
-  };
+  emailSender.sendOrder(emailBody);
+  res.send("OK");
+});
 
-  transporter.sendMail(mailOptions, function(err, info) {
-    if (err) {
-      res.status(505).send(err);
-    } else {
-      res.send(info.response);
-    }
-  });
+app.post('/comments', function(req, res) {
+  var emailBody = 'Имя клиента: <b>' + req.body.name + '</b>'
+    + '<br/>Телефон: ' + req.body.phone
+    + '<br/>E-mail: ' + req.body.email
+    + '<br/><br>' + req.body.message;
+
+  emailSender.sendComment(emailBody);
+  res.send("OK");
 });
 
 app.listen(app.get('port'), function() {

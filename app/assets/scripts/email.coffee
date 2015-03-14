@@ -12,3 +12,16 @@ window.sendOrder = ->
     return
   return
 
+window.sendComment = ->
+  $.post 'comments',
+    name:   do($ '#nameCom').val
+    phone: do($ '#phoneCom').val
+    email: do($ '#emailCom').val
+    message: do($ '#messageCom').val
+    ()->
+      alert "Comment has been sent!"
+      return
+  .fail ->
+    alert "Error!"
+    return
+  return

@@ -103,8 +103,10 @@ module.exports = (grunt) ->
               '<%= paths.components %>respond/respond.min.js'
           }
           {
-            '<%= paths.dist + paths.app %>app.js':
-              '<%= paths.app %>app.js'
+            expand: true
+            cwd: '<%= paths.app %>'
+            src: '**/*.js'
+            dest: '<%= paths.dist + paths.app %>'
           }
         ]
       css:
@@ -228,7 +230,7 @@ module.exports = (grunt) ->
         files: '<%= paths.scripts %>**/*.{js,coffee,coffee.md,litcoffee}'
         tasks: ['scripts', 'jade']
       app_script:
-        files: '<%= paths.app %>app.js'
+        files: '<%= paths.app %>*.js'
         tasks: ['scripts', 'jade']
 
   grunt.loadNpmTasks 'grunt-contrib-clean'

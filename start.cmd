@@ -1,1 +1,1 @@
-nodemon ./dist/app/app.js
+nodemon ./dist/app/app.js -w ./dist/app

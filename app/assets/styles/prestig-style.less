@@ -1,19 +1,24 @@
-@baseBackgroundColor: #F0F0F0;
-@orderFormWidth: 255px;
+@baseBackgroundColor: #FFFFFF;
+@orderFormWidth: 280px;
+@textOnBlueColor: #FFFFFF;
+@secondBackground: #262F72;
+@baseFontFamily: Calibri;
 
 body {
-  background-color: #F0F0F0;
+  background-color: @baseBackgroundColor;
+  font-family: @baseFontFamily;
 }
 
 .prestig-form {
   width: @orderFormWidth;
   float: right;
+  font-size: 16pt;
 }
 
 #sendOrderDiv {
   width: @orderFormWidth;
   height: auto;
-  background-color: #272E72;
+  background-color: @secondBackground;
 }
 
 #sendOrderDiv > input, textarea {
@@ -26,12 +31,20 @@ body {
 #sendOrderDiv > input {
   height: 28px;
   border: none;
+  line-height: 25px;
+}
+
+#sendOrderDiv > label {
+  color: @textOnBlueColor;
+  margin-top: 5px;
+  margin-bottom: 2px;
 }
 
 #sendOrderDiv > textarea {
-  height: 76px;
+  height: 83px;
   border: none;
   margin-bottom: 9px;
+  line-height: 20px;
 }
 
 #sendOrderDiv > button {
@@ -40,14 +53,54 @@ body {
 }
 
 .prestig-content {
-  padding: 10px;
+  padding: 0;
+  width: 1024px;
 }
 
 .prestig-button {
   background-color: #6BC8CF;
-  color: #262F72;
+  color: @secondBackground;
   font-weight: bold;
   border: none;
   width: @orderFormWidth;
-  height: 45px;
+  height: 53px;
+}
+
+.prestig-divider {
+  background-color: @secondBackground;
+  min-height: 15px;
+  padding: 0;
+}
+
+.description {
+  padding-right: 60px;
+  padding-top: 10px;
+  padding-left: 25px;
+  font-size: 11pt;
+  text-indent: 35px;
+  height: 340px;
+}
+
+.col-md-4 {
+  padding: 0;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+p {
+  margin: 0;
+}
+
+#companies {
+  height: 290px;
+}
+
+.prestig-title {
+  color: #FFFFFF !important;
+  font-size: 20pt !important;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

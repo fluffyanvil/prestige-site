@@ -2,22 +2,53 @@ extends _base
 
 block content
   div.container.prestig-content
+    div.col-md-12.prestig-divider
     div.row
       div.col-md-4
         div.prestig-form
           #sendOrderDiv.container
             label.
-             Оставить заявку:
+             ОСТАВИТЬ ЗАЯВКУ:
             input(id='name', type='text', placeholder='Ваше имя')
             input(id='phone', type='text', placeholder='Телефон')
             input(id='email', type='text', placeholder='E-mail')
             textarea(id='message', placeholder='Дополнительная информация')
           button(onclick='sendOrder();').prestig-button.
             ОТПРАВИТЬ
-      div.col-md-8.text-justify.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus feugiat, nisl vitae bibendum rhoncus,
-        leo nulla lobortis nulla, non scelerisque dolor erat ut eros. Curabitur sed dignissim urna. Vivamus quis
-        pulvinar diam, elementum facilisis mauris. Aliquam neque elit, aliquet vitae auctor vitae, lacinia sed felis.
-        Donec purus ex, bibendum vel efficitur sit amet, cursus sed nunc. Nulla facilisi. Mauris feugiat nibh in mi
-        porttitor, in fermentum orci iaculis. Nullam posuere, massa sit amet maximus varius, justo enim vehicula nunc,
-        vitae placerat ligula quam eu magna.
+      div.description.col-md-8.text-justify
+        p.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus feugiat, nisl vitae bibendum rhoncus,
+          leo nulla lobortis nulla, non scelerisque dolor erat ut eros. Curabitur sed dignissim urna. Vivamus quis
+          pulvinar diam, elementum facilisis mauris.
+        p.
+          Aliquam neque elit, aliquet vitae auctor vitae, lacinia sed felis.
+          Donec purus ex, bibendum vel efficitur sit amet, cursus sed nunc. Nulla facilisi. Mauris feugiat nibh in mi
+          porttitor, in fermentum orci iaculis. Nullam posuere, massa sit amet maximus varius, justo enim vehicula nunc,
+          vitae placerat ligula quam eu magna.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+    div.col-md-12.prestig-divider.text-center
+      label.prestig-title.
+        РАБОТАЕМ С...
+    #companies.col-md-12.text-center
+      label(style='padding-top: 80px; font-size: 60pt;').
+        COMPANIES WILL BE HERE!
+    div.col-md-12.prestig-divider.text-center
+      label.prestig-title.
+        ОТЗЫВЫ
+    div.row
+      div.col-md-4
+        div.prestig-form
+          #sendOrderDiv.container
+            label.
+             ОСТАВИТЬ ОТЗЫВ:
+            input(id='nameCom', type='text', placeholder='Ваше имя')
+            input(id='phoneCom', type='text', placeholder='Телефон')
+            input(id='emailCom', type='text', placeholder='E-mail')
+            textarea(id='messageCom', placeholder='Отзыв')
+          button(onclick='sendComment();').prestig-button.
+            ОТПРАВИТЬ
+      div.description.col-md-8.text-justify
+        p.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus feugiat, nisl vitae bibendum rhoncus,
+          leo nulla lobortis nulla, non scelerisque dolor erat ut eros. Curabitur sed dignissim urna. Vivamus quis
+          pulvinar diam, elementum facilisis mauris.
