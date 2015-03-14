@@ -19,15 +19,15 @@ app.use(favicon(__dirname + '/assets/images/favicon.ico'));
 app.use(serveStatic(__dirname));
 
 app.post('/orders', function(req, res) {
-  var emailBody = 'Order from: <b>' + req.body.name + '</b>'
-    + '<br/>Phone: ' + req.body.phone
-    + '<br/>Email: ' + req.body.email
+  var emailBody = 'Имя клиента: <b>' + req.body.name + '</b>'
+    + '<br/>Телефон: ' + req.body.phone
+    + '<br/>E-mail: ' + req.body.email
     + '<br/><br>' + req.body.message;
 
   var mailOptions = {
     from: 'tofik.mamishov@prestig.pro',
     to: 'mamishov.tofik@gmail.com',
-    subject: 'order',
+    subject: 'prestig.pro - Новая заявка!',
     html: emailBody
   };
 
