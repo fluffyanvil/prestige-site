@@ -13,16 +13,17 @@ app.set('view engine', 'jade');
 app.set('views', __dirname );
 
 app.get('/', function(req, res) {
-  var logos = [];
-  fs.readdir(__dirname + '/assets/images/logos', function (err, files) {
+  fs.readdir(__dirname + '/assets/images', function (err, files) {
     if (err) {
       console.log(err);
     } else {
-      logos = files;
+      var logos = files.filter(function(file) {
+        return file.indexOf("_logo") > -1;
+      });
+      var cities = ['город Обнинск','Калужская область', 'Московская область', 'Тульская область', 'Орловская область'];
+      res.render('index', {logos: logos, cities: cities});
     }
   });
-  console.log(logos);
-  res.render('index', {logos: logos});
 });
 
 app.get('/assets/:dir/:file', function(req, res) {

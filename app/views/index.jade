@@ -26,15 +26,15 @@ block content
           porttitor, in fermentum orci iaculis. Nullam posuere, massa sit amet maximus varius, justo enim vehicula nunc,
           vitae placerat ligula quam eu magna.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         ul(id='locations')
-          each val in ['город Обнинск','Калужская область', 'Московская область', 'Тульская область', 'Орловская область']
-            li=val
+          each city in cities
+            li=city
 
     div.col-md-12.prestig-divider.text-center
       label.prestig-title.
         РАБОТАЕМ С...
     #companies.col-md-12.text-center
       each logo in logos
-        img(src=logo)
+        img(src='/assets/images/' + logo)
     div.col-md-12.prestig-divider.text-center
       label.prestig-title.
         ОТЗЫВЫ
