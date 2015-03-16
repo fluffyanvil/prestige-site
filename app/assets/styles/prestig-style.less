@@ -3,6 +3,7 @@
 @thirdColor: #FFFFFF;
 @orderFormWidth: 280px;
 @baseFontFamily: Calibri;
+@sectionHeight: 320px;
 
 body {
   background-color: @firstColor;
@@ -73,12 +74,12 @@ body {
 }
 
 .description {
-  padding-right: 60px;
+  padding-right: 50px;
   padding-top: 10px;
   padding-left: 25px;
   font-size: 11pt;
   text-indent: 35px;
-  height: 340px;
+  height: @sectionHeight;
 }
 
 .col-md-4 {
@@ -95,7 +96,7 @@ p {
 }
 
 #companies {
-  height: 290px;
+  height: @sectionHeight;
 }
 
 #companies > img {
@@ -116,4 +117,14 @@ p {
   font-size: 14pt;
   line-height: 20px;
   text-indent: 0;
+}
+
+#footer {
+  height:100px;
+}
+
+#banner {
+  height: @sectionHeight;
+  padding-left: 0;
+  padding-right: 0;
 }
