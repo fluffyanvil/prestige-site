@@ -1,11 +1,11 @@
-@baseBackgroundColor: #FFFFFF;
+@firstColor: #FFFFFF;
+@secondColor: #262F72;
+@thirdColor: #FFFFFF;
 @orderFormWidth: 280px;
-@textOnBlueColor: #FFFFFF;
-@secondBackground: #262F72;
 @baseFontFamily: Calibri;
 
 body {
-  background-color: @baseBackgroundColor;
+  background-color: @firstColor;
   font-family: @baseFontFamily;
 }
 
@@ -18,7 +18,7 @@ body {
 #sendOrderDiv {
   width: @orderFormWidth;
   height: auto;
-  background-color: @secondBackground;
+  background-color: @secondColor;
 }
 
 #sendOrderDiv > input, textarea {
@@ -35,7 +35,7 @@ body {
 }
 
 #sendOrderDiv > label {
-  color: @textOnBlueColor;
+  color: @thirdColor;
   margin-top: 5px;
   margin-bottom: 2px;
 }
@@ -59,7 +59,7 @@ body {
 
 .prestig-button {
   background-color: #6BC8CF;
-  color: @secondBackground;
+  color: @secondColor;
   font-weight: bold;
   border: none;
   width: @orderFormWidth;
@@ -67,7 +67,7 @@ body {
 }
 
 .prestig-divider {
-  background-color: @secondBackground;
+  background-color: @secondColor;
   min-height: 15px;
   padding: 0;
 }
@@ -103,4 +103,11 @@ p {
   font-size: 20pt !important;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+#locations {
+  color: @secondColor;
+  font-weight: bold;
+  font-size: 14pt;
+  line-height: 20px;
 }

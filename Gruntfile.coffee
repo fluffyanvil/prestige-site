@@ -136,6 +136,15 @@ module.exports = (grunt) ->
             dest: '<%= paths.dist + paths.fonts %>'
           }
         ]
+      views:
+        files: [
+          {
+            expand: true
+            cwd: '<%= paths.views %>'
+            src: ['**/*.jade']
+            dest: '<%= paths.dist + paths.app %>'
+          }
+        ]
 
     cssmin:
       dist:
@@ -175,24 +184,6 @@ module.exports = (grunt) ->
           '<%= paths.dist + paths.scripts %>bundle.min.js':
             '<%= paths.dist + paths.scripts %>bundle.js'
 
-    jade:
-      dist:
-        options:
-          pretty: true
-          data:
-            settings: settings
-            asset: assetHelper
-            ENV: ENV
-        files: [
-          {
-            expand: true
-            cwd: '<%= paths.views %>'
-            src: ['**/*.jade', '!**/_*.jade']
-            dest: '<%= paths.dist + paths.app %>'
-            ext: '.html'
-          }
-        ]
-
     # finds all instances of the string $ASSET(some_asset_path) in the
     # concatenated and resolves the path of the asset.
     # It relies on the assetHelper for this.
@@ -219,26 +210,25 @@ module.exports = (grunt) ->
     watch:
       images:
         files: '<%= paths.images %>**/*.{png,gif,jpg,jpeg}'
-        tasks: ['images', 'stylesheets', 'jade']
+        tasks: ['images', 'stylesheets', 'copy:views']
       views:
         files: '<%= paths.views %>**/*.jade'
-        tasks: ['jade']
+        tasks: ['copy:views']
       stylesheets:
         files: '<%= paths.stylesheets %>**/*.{less,css}'
-        tasks: ['stylesheets', 'jade']
+        tasks: ['stylesheets', 'copy:views']
       scripts:
         files: '<%= paths.scripts %>**/*.{js,coffee,coffee.md,litcoffee}'
-        tasks: ['scripts', 'jade']
+        tasks: ['scripts', 'copy:views']
       app_script:
         files: '<%= paths.app %>*.js'
-        tasks: ['scripts', 'jade']
+        tasks: ['scripts', 'copy:views']
 
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-cssmin'
   grunt.loadNpmTasks 'grunt-contrib-imagemin'
-  grunt.loadNpmTasks 'grunt-contrib-jade'
   grunt.loadNpmTasks 'grunt-contrib-less'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-watch'
@@ -249,5 +239,5 @@ module.exports = (grunt) ->
     'uglify:dist']
   grunt.registerTask 'images', ['imagemin', 'copy:images']
   grunt.registerTask 'default', ['clean:all', 'images', 'copy:fonts', 'stylesheets',
-    'scripts', 'jade']
+    'scripts', 'copy:views']
 

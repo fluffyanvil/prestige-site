@@ -25,13 +25,16 @@ block content
           Donec purus ex, bibendum vel efficitur sit amet, cursus sed nunc. Nulla facilisi. Mauris feugiat nibh in mi
           porttitor, in fermentum orci iaculis. Nullam posuere, massa sit amet maximus varius, justo enim vehicula nunc,
           vitae placerat ligula quam eu magna.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        ul(id='locations')
+          each val in ['город Обнинск','Калужская область', 'Московская область', 'Тульская область', 'Орловская область']
+            li=val
 
     div.col-md-12.prestig-divider.text-center
       label.prestig-title.
         РАБОТАЕМ С...
     #companies.col-md-12.text-center
-      label(style='padding-top: 80px; font-size: 60pt;').
-        COMPANIES WILL BE HERE!
+      each logo in logos
+        img(src=logo)
     div.col-md-12.prestig-divider.text-center
       label.prestig-title.
         ОТЗЫВЫ
