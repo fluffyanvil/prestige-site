@@ -21,7 +21,10 @@ app.get('/', function(req, res) {
         return file.indexOf("_logo") > -1;
       });
       var cities = ['город Обнинск','Калужская область', 'Московская область', 'Тульская область', 'Орловская область'];
-      res.render('index', {logos: logos, cities: cities});
+      var slides = files.filter(function(file) {
+        return file.indexOf("slide") > -1;
+      });
+      res.render('index', { logos: logos, cities: cities, slides: slides });
     }
   });
 });

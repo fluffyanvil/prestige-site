@@ -1,25 +1,24 @@
-@firstColor: #FFFFFF;
-@secondColor: #262F72;
-@thirdColor: #FFFFFF;
-@orderFormWidth: 280px;
-@baseFontFamily: Calibri;
-@sectionHeight: 320px;
+@first-color: #FFFFFF;
+@second-color: #262F72;
+@third-color: #FFFFFF;
+@order-form-width: 280px;
+@section-height: 320px;
 
 body {
-  background-color: @firstColor;
-  font-family: @baseFontFamily;
+  background-color: @first-color;
+  font-family: Arial, serif;
 }
 
 .prestig-form {
-  width: @orderFormWidth;
+  width: @order-form-width;
   float: right;
   font-size: 16pt;
 }
 
 #sendOrderDiv {
-  width: @orderFormWidth;
+  width: @order-form-width;
   height: auto;
-  background-color: @secondColor;
+  background-color: @second-color;
 }
 
 #sendOrderDiv > input, textarea {
@@ -36,7 +35,7 @@ body {
 }
 
 #sendOrderDiv > label {
-  color: @thirdColor;
+  color: @third-color;
   margin-top: 5px;
   margin-bottom: 2px;
 }
@@ -60,15 +59,15 @@ body {
 
 .prestig-button {
   background-color: #6BC8CF;
-  color: @secondColor;
+  color: @second-color;
   font-weight: bold;
   border: none;
-  width: @orderFormWidth;
+  width: @order-form-width;
   height: 53px;
 }
 
 .prestig-divider {
-  background-color: @secondColor;
+  background-color: @second-color;
   min-height: 15px;
   padding: 0;
 }
@@ -79,7 +78,7 @@ body {
   padding-left: 25px;
   font-size: 11pt;
   text-indent: 35px;
-  height: @sectionHeight;
+  height: @section-height;
 }
 
 .col-md-4 {
@@ -96,12 +95,21 @@ p {
 }
 
 #companies {
-  height: @sectionHeight;
+  height: @section-height;
 }
 
 #companies > img {
   margin-left: 20px;
   margin-right: 20px;
+  margin-top: 20px;
+  border: 1px solid transparent;
+  padding: 3px;
+}
+
+#companies > img:hover {
+  border: 1px solid #000000;
+  box-shadow: 0 0 5px;
+  cursor: pointer;
 }
 
 .prestig-title {
@@ -112,7 +120,7 @@ p {
 }
 
 #locations {
-  color: @secondColor;
+  color: @second-color;
   font-weight: bold;
   font-size: 14pt;
   line-height: 20px;
@@ -124,7 +132,26 @@ p {
 }
 
 #banner {
-  height: @sectionHeight;
+  height: @section-height;
   padding-left: 0;
-  padding-right: 0;
+  padding-right: 50px;
+  padding-top: 26px;
+}
+
+.owl-theme .owl-controls {
+  margin-top: 0 !important;
+  height: 0 !important;
+}
+
+.owl-pagination {
+  position: relative !important;
+  bottom: 20px !important;
+}
+
+.owl-theme .owl-controls .owl-page span {
+  background-color: #5D5D5B !important;
+}
+
+.owl-theme .owl-controls .owl-page.active span {
+  background-color: @second-color !important;
 }

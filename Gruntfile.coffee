@@ -25,6 +25,7 @@ module.exports = (grunt) ->
     images: '<%= paths.assets %>images/'
     fonts: '<%= paths.assets %>fonts/'
     app: 'app/'
+    bin: '<%= paths.app %>bin/'
 
   assetHelper = new AssetManager(
     paths.dist + settings.ASSET_ROOT
@@ -104,7 +105,7 @@ module.exports = (grunt) ->
           }
           {
             expand: true
-            cwd: '<%= paths.app %>'
+            cwd: '<%= paths.bin %>'
             src: '**/*.js'
             dest: '<%= paths.dist + paths.app %>'
           }
@@ -145,6 +146,15 @@ module.exports = (grunt) ->
             dest: '<%= paths.dist + paths.app %>'
           }
         ]
+      owl:
+        files: [
+          {
+            expand: true
+            cwd: '<%= paths.components %>owl-carousel/'
+            src: '**/*'
+            dest: '<%= paths.dist + paths.assets %>owl-carousel/'
+          }
+        ]
 
     cssmin:
       dist:
@@ -169,7 +179,8 @@ module.exports = (grunt) ->
         files:
           '<%= paths.dist + paths.scripts %>bundle.js': [
             '<%= paths.components %>jquery/jquery.js'
-            '<%= paths.components %>components-bootstrap/js/*.js'
+            '<%= paths.components %>components-bootstrap/js/*.js',
+             '!<%= paths.components %>components-bootstrap/js/bootstrap.js',
             '<%= paths.temp + paths.scripts %>/**/*js'
             # CHECKPOINT: [js] list the modules you want to include into the
             # js application bundle here. This includes third party modules,
@@ -221,7 +232,7 @@ module.exports = (grunt) ->
         files: '<%= paths.scripts %>**/*.{js,coffee,coffee.md,litcoffee}'
         tasks: ['scripts', 'copy:views']
       app_script:
-        files: '<%= paths.app %>*.js'
+        files: '<%= paths.bin %>*.js'
         tasks: ['scripts', 'copy:views']
 
   grunt.loadNpmTasks 'grunt-contrib-clean'
@@ -239,5 +250,5 @@ module.exports = (grunt) ->
     'uglify:dist']
   grunt.registerTask 'images', ['imagemin', 'copy:images']
   grunt.registerTask 'default', ['clean:all', 'images', 'copy:fonts', 'stylesheets',
-    'scripts', 'copy:views']
+    'scripts', 'copy:views', 'copy:owl']
 
