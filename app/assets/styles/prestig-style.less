@@ -7,13 +7,13 @@
 
 body {
   background-color: @first-color;
-  font-family: Arial, serif;
+  font-family: "Trebuchet MS", serif;
 }
 
 .prestig-form {
   width: @order-form-width;
   float: right;
-  font-size: 16pt;
+  font-size: 14pt;
 }
 
 #sendOrderDiv {
@@ -78,9 +78,10 @@ body {
   padding-right: 50px;
   padding-top: 10px;
   padding-left: 25px;
-  font-size: 11pt;
+  font-size: 10pt;
   text-indent: 35px;
   height: @section-height-big;
+  line-height: 13px;
 }
 
 .col-md-4 {
@@ -127,6 +128,7 @@ p {
   font-size: 14pt;
   line-height: 20px;
   text-indent: 0;
+  margin-top: 5px;
 }
 
 #footer {
@@ -156,4 +158,51 @@ p {
 
 .owl-theme .owl-controls .owl-page.active span {
   background-color: @second-color !important;
+}
+
+#chars {
+  float: right;
+  margin-top: 26px;
+  font-size: 10pt;
+  width: 300px;
+  margin-right: 18px;
+  list-style: none;
+}
+
+#chars > li > label {
+  color: @second-color;
+  font-size: 14pt;
+  margin-bottom: 3px;
+}
+
+#chars > li > p {
+  line-height: 13px;
+}
+
+#chars > li {
+  margin-bottom: 5px;
+}
+
+#chars .stability {
+  background: url(../images/stability_icon.png) no-repeat 0 50%;
+  padding-left: 62px;
+}
+
+#chars .reliability {
+  background: url(../images/reliability_icon.png) no-repeat 0 50%;
+  padding-left: 62px;
+}
+
+#chars .efficiency {
+  background: url(../images/efficiency_icon.png) no-repeat 0 50%;
+  padding-left: 62px;
+}
+
+#chars .conscientiousness {
+  background: url(../images/conscientiousness_icon.png) no-repeat 0 50%;
+  padding-left: 62px;
+}
+
+#header {
+
 }

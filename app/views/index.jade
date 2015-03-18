@@ -2,9 +2,28 @@ extends _base
 
 block content
   div.container.prestig-content
+    #header
+      img(src='/assets/images/header.png')
     div.col-md-12.prestig-divider
     div.row
       div.col-md-4
+        ul(id='chars')
+          li.stability
+            label='Стабильность'
+            p.
+              Более 500 реализованных проектов за два года работы на рынке
+          li.reliability
+            label='Надежность'
+            p.
+              Работаем напрямую с производителями
+          li.efficiency
+            label='Оперативность'
+            p.
+              Выход на объект в течение одного дня после подписания контракта
+          li.conscientiousness
+            label='Добросовестность'
+            p.
+             Добросовестность и высокая культура труда сотрудников на объекте
       #banner.col-md-8
         #carousel.owl-carousel
           each slide in slides
