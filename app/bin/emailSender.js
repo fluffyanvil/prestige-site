@@ -1,15 +1,5 @@
 var nodemailer = require('nodemailer');
 
-var response = {
-  status: '',
-  data: ''
-};
-
-function setResponse(status, info) {
-  response.status = status;
-  response.data = info;
-}
-
 var transporter = nodemailer.createTransport({
   service: 'Yandex',
   auth: {
@@ -18,7 +8,7 @@ var transporter = nodemailer.createTransport({
   }
 });
 
-function sendMail (recipient, subj, emailBody) {
+function sendMail (recipient, subj, emailBody, res) {
   var mailOptions = {
     from: 'tofik.mamishov@prestig.pro',
     to: recipient,
@@ -28,19 +18,19 @@ function sendMail (recipient, subj, emailBody) {
 
   transporter.sendMail(mailOptions, function(err, info) {
     if (err) {
-      console.log(err);
+      res.status(500).send(err);
     } else {
-      console.log(info.response);
+      res.status(200).send(info);
     }
   });
 }
 
-var sendOrder = function(emailBody) {
-  sendMail('mamishov.tofik@gmail.com', 'Новая заявка!', emailBody);
+var sendOrder = function(emailBody, res) {
+  sendMail('mamishov.tofik@gmail.com', 'Новая заявка!', emailBody, res);
 };
 
-var sendComment = function(emailBody) {
-  sendMail('mamishov.tofik@gmail.com', 'Новый отзыв!', emailBody);
+var sendComment = function(emailBody, res) {
+  sendMail('mamishov.tofik@gmail.com', 'Новый отзыв!', emailBody, res);
 };
 
 module.exports.sendOrder = sendOrder;

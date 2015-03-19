@@ -45,8 +45,7 @@ app.post('/orders', function(req, res) {
     + '<br/>E-mail: ' + req.body.email
     + '<br/><br>' + req.body.message;
 
-  emailSender.sendOrder(emailBody);
-  res.send("OK");
+  emailSender.sendOrder(emailBody, res);
 });
 
 app.post('/comments', function(req, res) {
@@ -55,8 +54,7 @@ app.post('/comments', function(req, res) {
     + '<br/>E-mail: ' + req.body.email
     + '<br/><br>' + req.body.message;
 
-  emailSender.sendComment(emailBody);
-  res.send("OK");
+  emailSender.sendComment(emailBody, res);
 });
 
 app.listen(app.get('port'), function() {
