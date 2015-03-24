@@ -62,7 +62,7 @@ block content
     #companies.col-md-12.text-center
       each logo in logos
         -var pictId = logo.replace('_logo.png', '');
-        img(id=pictId src='/assets/images/' + logo)
+        img(id=pictId src='/assets/images/' + logo data-toggle='modal' data-target='#brandModal')
     div.col-md-12.prestig-divider.text-center
       label.prestig-title.
         ОТЗЫВЫ
@@ -86,3 +86,19 @@ block content
     div.col-md-12.prestig-divider
     #footer
       img(src='/assets/images/footer.png')
+    div(id='brandModal' tabindex='-1' role='dialog' aria-labelledby='brandModalLabel' aria-hidden='true').modal.fade
+      div.modal-dialog
+        div.modal-content
+          div.modal-header
+            button(type='button' data-dismiss='modal' aria-label='Закрыть').close
+              span(aria-hidden='true').
+                &times;
+            h4(if='brandModalLabel').modal-title.
+              Информация о бренде
+          div.modal-body.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus feugiat, nisl vitae bibendum rhoncus,
+            leo nulla lobortis nulla, non scelerisque dolor erat ut eros. Curabitur sed dignissim urna. Vivamus quis
+            pulvinar diam, elementum facilisis mauris.
+          div.modal-footer
+            button(type='button' data-dismiss='modal').prestig-button.
+              ЗАКРЫТЬ

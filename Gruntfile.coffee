@@ -181,6 +181,7 @@ module.exports = (grunt) ->
             '<%= paths.components %>jquery/jquery.js'
             '<%= paths.components %>components-bootstrap/js/*.js',
              '!<%= paths.components %>components-bootstrap/js/bootstrap.js',
+             '!<%= paths.components %>components-bootstrap/js/modal.js',
             '<%= paths.temp + paths.scripts %>/**/*js'
             # CHECKPOINT: [js] list the modules you want to include into the
             # js application bundle here. This includes third party modules,

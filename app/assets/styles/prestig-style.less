@@ -4,6 +4,9 @@
 @order-form-width: 280px;
 @section-height-small: 320px;
 @section-height-big: 340px;
+@baseBackground: @first-color url('../images/background.png') repeat;
+@modalWidth: 600px;
+@modalHeight: 230px;
 
 body {
   background-color: @first-color;
@@ -56,7 +59,7 @@ body {
 .prestig-content {
   padding: 0;
   width: 1024px;
-  background: @first-color url('../images/background.png') repeat;
+  background: @baseBackground;
 }
 
 .prestig-button {
@@ -66,6 +69,7 @@ body {
   border: none;
   width: @order-form-width;
   height: 53px;
+  font-size: 14pt;
 }
 
 .prestig-divider {
@@ -203,6 +207,25 @@ p {
   padding-left: 62px;
 }
 
-#header {
+.modal-footer {
+  text-align: center;
+  border-top: 0;
+}
 
+.modal-header {
+  border-bottom: 0;
+}
+
+.modal-content {
+  border-radius: 0;
+  width: @modalWidth;
+  height: @modalHeight;
+}
+
+.modal-dialog {
+  position: absolute;
+  left: 50%;
+  margin-left: -@modalWidth / 2;
+  top: 50%;
+  margin-top: -@modalHeight / 2;
 }
