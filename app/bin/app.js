@@ -57,6 +57,10 @@ app.post('/comments', function(req, res) {
   emailSender.sendComment(emailBody, res);
 });
 
+app.get('/brands/:brand', function(req, res) {
+  res.send('<img src="assets/images/' + req.params.brand + '_logo.png"/>');
+});
+
 app.listen(app.get('port'), function() {
   return console.log('%s:%s', (process.env.address || 'localhost'), app.get('port'));
 });

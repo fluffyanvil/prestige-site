@@ -20,11 +20,4 @@ html(lang='en')
       script(type='text/javascript', src='/assets/scripts/bundle.min.js')
       script(type='text/javascript', src='/assets/owl-carousel/owl.carousel.js')
       script.
-        $(document).ready(function () {
-          $("#carousel").owlCarousel({
-            singleItem: true,
-            autoPlay: true,
-            navigation: false,
-            pagination: true
-          });
-        });
+        $(document).ready(loadCarousel);

@@ -62,7 +62,7 @@ block content
     #companies.col-md-12.text-center
       each logo in logos
         -var pictId = logo.replace('_logo.png', '');
-        img(id=pictId src='/assets/images/' + logo data-toggle='modal' data-target='#brandModal')
+        img(id=pictId src='/assets/images/' + logo data-target='#brandModal' onclick='loadBrandInfo("' + pictId + '")')
     div.col-md-12.prestig-divider.text-center
       label.prestig-title.
         ОТЗЫВЫ
@@ -86,7 +86,8 @@ block content
     div.col-md-12.prestig-divider
     #footer
       img(src='/assets/images/footer.png')
-    div(id='brandModal' tabindex='-1' role='dialog' aria-labelledby='brandModalLabel' aria-hidden='true').modal.fade
+
+    #brandModal(tabindex='-1' role='dialog' aria-labelledby='brandModalLabel' aria-hidden='true').modal.fade
       div.modal-dialog
         div.modal-content
           div.modal-header
@@ -95,10 +96,7 @@ block content
                 &times;
             h4(if='brandModalLabel').modal-title.
               Информация о бренде
-          div.modal-body.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus feugiat, nisl vitae bibendum rhoncus,
-            leo nulla lobortis nulla, non scelerisque dolor erat ut eros. Curabitur sed dignissim urna. Vivamus quis
-            pulvinar diam, elementum facilisis mauris.
+          #brandInfo.modal-body
           div.modal-footer
             button(type='button' data-dismiss='modal').prestig-button.
               ЗАКРЫТЬ
