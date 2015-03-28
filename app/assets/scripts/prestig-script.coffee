@@ -28,15 +28,18 @@ window.sendComment = ->
 
 window.loadCarousel = ->
   $("#carousel").owlCarousel
-    singleItem: true,
-    autoPlay: true,
-    navigation: false,
+    singleItem: true
+    autoPlay: true
+    navigation: false
     pagination: true
   return
 
 window.loadBrandInfo = (brandName) ->
-  $.get 'brands/' + brandName, (html) ->
-    $('#brandInfo').html html
+  $.get 'brands/' + brandName, (json) ->
+    $('#brandInfo').owlCarousel
+      jsonPath: json
+      pagination: false
+      items: 3
     $('#brandModal').modal 'show',
       backdrop: 'static'
     return

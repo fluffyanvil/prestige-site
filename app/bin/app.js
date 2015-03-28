@@ -58,7 +58,7 @@ app.post('/comments', function(req, res) {
 });
 
 app.get('/brands/:brand', function(req, res) {
-  res.send('<img src="assets/images/' + req.params.brand + '_logo.png"/>');
+  res.send('assets/json/aeronik_info.json');
 });
 
 app.listen(app.get('port'), function() {

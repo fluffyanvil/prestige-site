@@ -24,6 +24,7 @@ module.exports = (grunt) ->
     stylesheets: '<%= paths.assets %>styles/'
     images: '<%= paths.assets %>images/'
     fonts: '<%= paths.assets %>fonts/'
+    json: '<%= paths.assets %>json/'
     app: 'app/'
     bin: '<%= paths.app %>bin/'
 
@@ -155,6 +156,13 @@ module.exports = (grunt) ->
             dest: '<%= paths.dist + paths.assets %>owl-carousel/'
           }
         ]
+      json:
+        files: [
+          expand: true
+          cwd: '<%= paths.json %>'
+          src: '**/*.json'
+          dest: '<%= paths.dist + paths.json %>'
+        ]
 
     cssmin:
       dist:
@@ -235,6 +243,9 @@ module.exports = (grunt) ->
       app_script:
         files: '<%= paths.bin %>*.js'
         tasks: ['scripts', 'copy:views']
+      json:
+        files: '<%= paths.json %>*.json'
+        tasks: ['copy:json']
 
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
@@ -251,5 +262,5 @@ module.exports = (grunt) ->
     'uglify:dist']
   grunt.registerTask 'images', ['imagemin', 'copy:images']
   grunt.registerTask 'default', ['clean:all', 'images', 'copy:fonts', 'stylesheets',
-    'scripts', 'copy:views', 'copy:owl']
+    'scripts', 'copy:views', 'copy:owl', 'copy:json']
 
