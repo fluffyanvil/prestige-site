@@ -4,9 +4,9 @@ block content
   div.container.prestig-content
     #header
       img(src='/assets/images/header.png')
-    div.col-md-12.prestig-divider
+    div.col-xs-12.col-md-12.prestig-divider
     div.row
-      div.col-md-4
+      div.col-xs-4.col-md-4
         ul(id='chars')
           li.stability
             label='Стабильность'
@@ -24,14 +24,14 @@ block content
             label='Добросовестность'
             p.
              Добросовестность и высокая культура труда сотрудников на объекте
-      #banner.col-md-8
+      #banner.col-xs-8.col-md-8
         #carousel.owl-carousel
           each slide in slides
             div.item
               img(src='/assets/images/' + slide)
-    div.col-md-12.prestig-divider
+    div.col-xs-12.col-md-12.prestig-divider
     div.row
-      div.col-md-4
+      div.col-xs-4.col-md-4
         div.prestig-form
           #sendOrderDiv.container
             label.
@@ -42,7 +42,7 @@ block content
             textarea(id='message', placeholder='Дополнительная информация')
           button(onclick='sendOrder();').prestig-button.
             ОТПРАВИТЬ
-      div.description.col-md-8.text-justify
+      div.description.col-xs-8.col-md-8.text-justify
         p.
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus feugiat, nisl vitae bibendum rhoncus,
           leo nulla lobortis nulla, non scelerisque dolor erat ut eros. Curabitur sed dignissim urna. Vivamus quis
@@ -56,18 +56,18 @@ block content
           each city in cities
             li=city
 
-    div.col-md-12.prestig-divider.text-center
+    div.col-xs-12.col-md-12.prestig-divider.text-center
       label.prestig-title.
         РАБОТАЕМ С...
-    #companies.col-md-12.text-center
+    #companies.col-xs-12.col-md-12.text-center
       each logo in logos
         -var pictId = logo.replace('_logo.png', '');
         img(id=pictId src='/assets/images/' + logo data-target='#brandModal' onclick='loadBrandInfo("' + pictId + '")')
-    div.col-md-12.prestig-divider.text-center
+    div.col-xs-12.col-md-12.prestig-divider.text-center
       label.prestig-title.
         ОТЗЫВЫ
     div.row
-      div.col-md-4
+      div.col-xs-4.col-md-4
         div.prestig-form
           #sendOrderDiv.container
             label.
@@ -78,12 +78,12 @@ block content
             textarea(id='messageCom', placeholder='Отзыв')
           button(onclick='sendComment();').prestig-button.
             ОТПРАВИТЬ
-      div.description.col-md-8.text-justify
+      div.description.col-xs-8.col-md-8.text-justify
         p.
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus feugiat, nisl vitae bibendum rhoncus,
           leo nulla lobortis nulla, non scelerisque dolor erat ut eros. Curabitur sed dignissim urna. Vivamus quis
           pulvinar diam, elementum facilisis mauris.
-    div.col-md-12.prestig-divider
+    div.col-xs-12.col-md-12.prestig-divider
     #footer
       img(src='/assets/images/footer.png')
 
@@ -100,3 +100,9 @@ block content
           div.modal-footer
             button(type='button' data-dismiss='modal').prestig-button.
               ЗАКРЫТЬ
+
+block scripts
+  script(type='text/javascript', src='/assets/scripts/bundle.min.js')
+  script(type='text/javascript', src='/assets/owl-carousel/owl.carousel.js')
+  script.
+    $(document).ready(loadCarousel);

@@ -3,7 +3,6 @@ html(lang='en')
   head
     title Static Site Ready!
     meta(charset='utf-8')
-    meta(name='viewport', content='initial-scale=0.1, user-scalable=yes')
     link(rel='shortcut icon', href='assets/images/favicon.ico', type='image/x-icon')
     link(rel='icon', href='assets/images/favicon.ico', type='image/x-icon')
     link(rel='stylesheet', type='text/css', href='/assets/styles/style.min.css')
@@ -15,9 +14,4 @@ html(lang='en')
       script(type='text/javascript', src=asset('scripts/respond.min.js'))
   body
     block content
-
     block scripts
-      script(type='text/javascript', src='/assets/scripts/bundle.min.js')
-      script(type='text/javascript', src='/assets/owl-carousel/owl.carousel.js')
-      script.
-        $(document).ready(loadCarousel);
